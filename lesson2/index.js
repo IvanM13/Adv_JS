@@ -1,0 +1,1 @@
+const win = window.open('https://www.exemple.com', '_blank');
