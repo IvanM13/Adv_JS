@@ -39,11 +39,11 @@ const divError = document.querySelector('.error_msg');
 
 initialData.forEach(element => {
   const productName = document.createElement('h3');
-  productName.textContent = element.product;
+  productName.innerHTML = element.product;
   reviews.appendChild(productName);
   element.reviews.forEach(review => {
     const defaultReview = document.createElement('p');
-    defaultReview.textContent = review.text;
+    defaultReview.innerHTML = review.text;
     reviews.appendChild(defaultReview);
   });
 });
@@ -55,10 +55,10 @@ sendBtn.addEventListener('click', function () {
       throw new Error('Несоответствующая длина текста')
     }
     const reviewElem = document.createElement('p');
-    reviewElem.textContent = (userInput.value);
+    reviewElem.innerHTML = (userInput.value);
     reviews.appendChild(reviewElem);
-    divError.textContent = '';
+    divError.innerHTML = '';
   } catch (error) {
-    divError.textContent = error.message;
+    divError.innerHTML = error.message;
   }
 });
